@@ -234,7 +234,18 @@ else {
 				   say("Feature number is not provided as part of create session A P I request");
 				}
 		  		else {
-					say("HI Yana, you have hit the message block of code.");
+					var resultmessage = ask("Press a ten digit phone number to send sms to the requested number or Press pound to skip", {
+						choices: "[410 DIGITS]",
+						terminator: "#",
+						timeout: 90.0,
+						mode: "dtmf",
+						interdigitTimeout: 10,
+						onChoice: function (event) {
+							message("Message from AT&T Call Management Services Sample Application", { to: event.value, network: "SMS"})},
+						onBadChoice: function (event) {
+							say("I am sorry, Iwas not able to get the ten digits");}
+						}
+			);	
 				}
 				break;
 			case 'reject':
