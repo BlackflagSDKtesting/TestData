@@ -228,6 +228,14 @@ else {
 						say("Disconnecting from conference");
 					}
 				});
+				break;			
+			case 'message':
+		  		if ( typeof featurenumber === 'undefined') {
+				   say("Feature number is not provided as part of create session A P I request");
+				}
+		  		else {
+					say("HI Yana, you have hit the message block of code.");
+				}
 				break;
 			case 'reject':
 				if ( typeof featurenumber === 'undefined') {
