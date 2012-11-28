@@ -234,8 +234,8 @@ else {
 				   say("Feature number is not provided as part of create session A P I request");
 				}
 		  		else {
-					var resultmessage = ask("Press a ten digit phone number to send sms to the requested number or Press pound to skip", {
-						choices: "[410 DIGITS]",
+					var resultmessage = ask("Please enter a ten digit phone number to send an sms message to or Press pound to skip", {
+						choices: "[10 DIGITS]",
 						terminator: "#",
 						timeout: 90.0,
 						mode: "dtmf",
