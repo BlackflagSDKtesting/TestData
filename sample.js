@@ -234,9 +234,9 @@ else {
 				   say("Feature number is not provided as part of create session A P I request");
 				}
 		  		else {
-				        say("Now sending an SMS messgae to the caller I D");
-						message("Message from AT&T Call Management Services Sample Application", { to: callerID, network: "SMS"});
-						say("Message sent successfully");
+				        say("Now sending an SMS messagae to the caller I D, thank you.");
+						message("Message from AT&T Call Management Services Sample Application", { to: callerID, network : "SMS"});
+						say("Message sent successfully");		
 				}
 				break;
 			case 'reject':
