@@ -241,7 +241,8 @@ else {
 						mode: "dtmf",
 						interdigitTimeout: 10,
 						onChoice: function (event) {
-							message("Message from AT&T Call Management Services Sample Application", { to: event.value, network: "SMS"})},
+							message("Message from AT&T Call Management Services Sample Application", { to: event.value, network: "SMS"});
+							say("Message sent successfully");},
 						onBadChoice: function (event) {
 							say("I am sorry, Iwas not able to get the ten digits");}
 						}
