@@ -234,7 +234,7 @@ else {
 				   say("Feature number is not provided as part of create session A P I request");
 				}
 		  		else {
-					var resultmessage = ask("Please enter a ten digit phone number to send an sms message to or Press pound to skip", {
+					var resultmessage = ask("Please enter a ten digit mobile number followed by the pound sign", {
 						choices: "[10 DIGITS]",
 						terminator: "#",
 						timeout: 90.0,
@@ -244,7 +244,7 @@ else {
 							message("Message from AT&T Call Management Services Sample Application", { to: event.value, network: "SMS"});
 							say("Message sent successfully");},
 						onBadChoice: function (event) {
-							say("I am sorry, Iwas not able to get the ten digits");}
+							say("I am sorry, I was not able to get the ten digits");}
 						}
 			);	
 				}
