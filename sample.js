@@ -92,23 +92,7 @@ if (typeof numberToDial === 'undefined') {
 			}
 		}
 	});
-	
-	ask("Press a ten digit phone number to send sms to the requested number or Press pound to skip", {
-            choices: "[10 DIGITS]",
-            terminator: "#",
-            timeout: 120.0,
-            mode: "dtmf",
-            interdigitTimeout:10,
-            onChoice: function (event) {
-                var numbertest = event.value;
-                say("Sending message to ");
-                say("<speak><say-as interpret-as = 'vxml:digits'>" + numbertest + "</say-as></speak>");
-                message("Message from AT&T Call Management Services Sample Application", {
-                    to: numbertest,
-                    network: "SMS"
-                });
-            }
-        });
+
 
 	ask("Enter a 10 digit phone number to transfer the call to or press pound to skip", {
 		choices: "[10 DIGITS]",
@@ -228,16 +212,6 @@ else {
 						say("Disconnecting from conference");
 					}
 				});
-				break;			
-			case 'message':
-		  		if ( typeof featurenumber === 'undefined') {
-				   say("Feature number is not provided as part of create session A P I request");
-				}
-		  		else {
-				        say("Now sending an SMS messagae to the caller I D, thank you.");
-						message("Message from AT&T Call Management Services Sample Application", { to: callerID, network : "SMS"});
-						say("Message sent successfully");		
-				}
 				break;
 			case 'reject':
 				if ( typeof featurenumber === 'undefined') {
